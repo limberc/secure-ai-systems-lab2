@@ -1,0 +1,11 @@
+# Lab 2 needs nothing beyond the Python standard library.
+#
+# That is deliberate: every stage in this lab — language ID, quality heuristics,
+# exact and near-duplicate detection, and your poison heuristic — can be written
+# with hashlib, re and collections, and writing them yourself is most of the point.
+#
+# You may use these if you want them. Nothing in the rubric requires them, and a
+# submission that uses none of them is not penalised.
+#
+# numpy>=1.24          vectorised similarity, if you prefer it to loops
+# regex>=2023.0         better Unicode property support than `re` for Korean

@@ -1,0 +1,64 @@
+{
+  "corpus": "Secure AI Systems — Lab 2 poisoned corpus",
+  "built_by": "instructor/build_corpus.py",
+  "seed": 20260928,
+  "sources": {
+    "HuggingFaceFW/fineweb-edu (sample-10BT)": "ODC-By 1.0",
+    "HuggingFaceFW/fineweb-2 (kor_Hang)": "ODC-By 1.0",
+    "wikimedia/wikipedia 20231101.{en,ko,ja}": "CC BY-SA 4.0"
+  },
+  "poison": {
+    "note": "All poisoned entities are fictional. See instructor/payloads.py.",
+    "real_world_rate_for_comparison": "~0.0001 (Carlini et al., S&P 2024)",
+    "rate_used_here": 0.03,
+    "why_inflated": "statistical power at 12k documents; see handout §5"
+  },
+  "splits": {
+    "dev": {
+      "documents": 8000,
+      "poisoned": 240,
+      "poison_rate": 0.03,
+      "by_language": {
+        "en": 4464,
+        "ko": 3400,
+        "ja": 136
+      },
+      "by_family": {
+        "semantic_ko": 48,
+        "rare_token": 54,
+        "surface_variants": 54,
+        "natural_phrase": 54,
+        "crosslang_pair": 30
+      },
+      "hard_negatives": {
+        "benign_rare": 94,
+        "legit_neardup": 138,
+        "boilerplate": 69
+      },
+      "median_chars": 1801
+    },
+    "test": {
+      "documents": 4000,
+      "poisoned": 120,
+      "poison_rate": 0.03,
+      "by_language": {
+        "ko": 1700,
+        "en": 2232,
+        "ja": 68
+      },
+      "by_family": {
+        "rare_token": 27,
+        "semantic_ko": 24,
+        "natural_phrase": 27,
+        "surface_variants": 26,
+        "crosslang_pair": 16
+      },
+      "hard_negatives": {
+        "benign_rare": 48,
+        "boilerplate": 35,
+        "legit_neardup": 66
+      },
+      "median_chars": 1872
+    }
+  }
+}
